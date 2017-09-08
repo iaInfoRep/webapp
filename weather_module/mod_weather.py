@@ -1,5 +1,4 @@
 import pyowm, copy, datetime
-from ir_api import *
 from datetime import *
 
 #
@@ -16,14 +15,11 @@ def getDate():
 
 api_key = "0c0db12f156ad8b51492250a9f8a0ef4"
 api_instance = pyowm.OWM()
-location = raw_input("city, country:")
-num_days = int(raw_input("int for # days forecast"))
 
 owm_object = pyowm.OWM(api_key)
-owm_list = owm_object.weather_at_place(location)
+owm_list = owm_object.weather_at_place('ames, ia')
 weather_obj = owm_list.get_weather()
 
-#print(weather_obj.get_temperature())
 
 #status,
 
@@ -51,29 +47,4 @@ def basic_weather(forecast_obj):
 
         i += 1
     return module_data
-
-#basic_weather(mdaily_cast(location,7))
-chris = basic_weather(mdaily_cast(location,7))
-for x in range(0,len(chris)):
-    print(chris[x])
-
-#print(get_cast_status(mdaily_cast(location,num_days)))
-
-# for forecast in x:
-#     print(forecast.weather.get_status())
-#owm_list = mod_api.api_instance.weather_at_place('Chicago')
-
-
-#activeWeather = owm_list.get_weather()
-
-
-#owm_list = owm_object
-
-#print(mod_api.api_instance.is_API_online())
-#print(activeWeather.get_temperature())
-
-#mod_obj = ir_api.api_object(api_key, owm_object)
-
-#weather_list = mod_obj.weather_at_places('Chicago', 'accurate')
-
 

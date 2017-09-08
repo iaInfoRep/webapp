@@ -9,8 +9,8 @@
     border-radius: 25px;
     padding: 20px;
     background: #000;
-    width: 20vw;
-    height: 20vw;
+    width: 60vw;
+    height: 60vw;
   }
   .square h3{
     text-align: justify;
@@ -20,7 +20,9 @@
 </style>
 <body>
     <div class="square">
-        <h3>{{testData}}</h3>
+        {% for day in testData %}
+        <h3>{{day}}</h3>
+        {% endfor %}
     </div>
 </body>
 </html>
